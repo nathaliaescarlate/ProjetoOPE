@@ -12,8 +12,11 @@ footer{
 
 header{
     background-color: dodgerblue;
+    top: 0;
+    left:0;
+    width: 100%;
 }
 
-img{
-    size: 60px;
+h1{
+    color: blue;
 }
