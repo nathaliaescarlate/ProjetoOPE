@@ -1,7 +1,14 @@
-footer{
-    background-color: lightblue;
+body{
+    font-family: 'Oxygen', sans-serif;
 }
-
+footer{
+    position: fixed;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    background-color: lightblue; 
+    text-align: start;
+}
 
 header{
     background-color: dodgerblue;
