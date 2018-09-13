@@ -1,2 +1,2 @@
-# ProjetoOPE
+# ProjetoLMS
 Projeto faculdade impacta 
