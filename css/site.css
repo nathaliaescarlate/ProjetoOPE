@@ -1,9 +1,11 @@
-body{
-    background-color: lightseagreen;
-}
 
 footer{
-    background-color: azure;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    background-color: lightblue; 
+    text-align: start;
 }
 
 
