@@ -19,4 +19,5 @@ def disciplina(request):
     conxtet = {
         'title': 'Projeto LMS: DISCIPLINAS'
     }
-    return render(request, "disciplina.html", conxtet)
+    return render(request, "disciplina.html", context)
+
