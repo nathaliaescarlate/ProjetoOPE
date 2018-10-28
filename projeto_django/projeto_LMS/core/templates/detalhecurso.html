@@ -1,28 +1,26 @@
 <!DOCTYPE html>
+{% extends "index.html" %}
 <html>
-<head>
-        {% load static %}
-    <meta charset="utf-8" />
-    <link rel="icon" href="{% static 'Header_logo_impacta.png' %}">
-    <title>{{ title | upper }}</title>
+    {% load static %}
+    <head>
+        {% block head %}
+            {{block.super}}
+        {% endblock head %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'detalhecurso.css' %}"/>
-    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-</head>
-<body>
-        <header>
-            <img src="{% static 'Header_logo_impacta.png' %}" width="200" height="170"><a href= "index" target="_blank">Projeto LMS - Faculdade Impacta</a>
-            <br>
-            <br>
-            <ul>
-                <a href="index" target="_blank"><li>Home Page</li></a>
-                <a href="listacurso" target="_blank"><li>Lista de Cursos</li></a>
-                <a href="detalhecurso" target="_blank"><li>Detalhe de Curso</li></a>
-                <a href="disciplina" target="_blank"><li>Disciplina</li></a>
-                <a href="noticias" target="_blank"><li>Noticias</li></a>
-            </ul>
-            </header>
-    <h1> Detalhes do curso </h1>
+        {% block css %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'detalhecurso.css' %}"/>
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+        {% endblock css %}
+    </head>
+    <body>
+        
+            {% block header %}
+                {{block.super}}
+            {% endblock header %}
+            
+            {% block h1 %}
+        <h1> Detalhes do curso </h1>
+            {% endblock h1 %}
 
     <p>O detalhe dos cursos oferecidos...lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt excepturi cumque voluptatem dolorum perspiciatis recusandae possimus, aliquid, officiis voluptas, ipsa eveniet commodi unde vero qui molestiae placeat officia error? Quibusdam!</p>
     

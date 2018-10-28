@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-        {% load static %}
-    <meta charset="utf-8" />
-    <link rel="icon" href="static/Header_logo_impacta.png">
-    <title>{{ title | upper }}</title>
     
+<head>
+    {% load static %}
+    {% block head %}
+    <meta charset="utf-8" />
+    <link rel="icon" href="{% static 'Header_logo_impacta.png'%}">
+    <title>{{ title | upper }}</title>
+    {% endblock head %}
+
+    {% block css %}
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'site.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-    
+    {% endblock css %}
 </head>
+    
 <body>
+    {% block header %}
     <header>
-        <img src="static/Header_logo_impacta.png" width="200" height="170"><a href= "index" target="_blank">Projeto LMS - Faculdade Impacta</a>
+        <img src="{% static 'Header_logo_impacta.png'%}" width="200" height="170"><a href= "index" target="_blank">Projeto LMS - Faculdade Impacta</a>
         <br>
         <br>
         <ul>
-            <a href="index" target="_blank"><li>Home Page</li></a>
-            <a href="listacurso" target="_blank"><li>Lista de Cursos</li></a>
-            <a href="detalhecurso" target="_blank"><li>Detalhe de Curso</li></a>
-            <a href="disciplina" target="_blank"><li>Disciplina</li></a>
-            <a href="noticias" target="_blank"><li>Noticias</li></a>
-        </ul>   
-        </header>  
-        
-    <h1>Home page - Faculdade Impacta</h1>
+            <a href="{% url 'homepage' %}" target="_blank"><li>Home Page</li></a>
+            <a href="{% url 'listadocurso' %}" target="_blank"><li>Lista de Cursos</li></a>
+            <a href="{% url 'detalhedocurso' %}" target="_blank"><li>Detalhe de Curso</li></a>
+            <a href="{% url 'disciplina' %}" target="_blank"><li>Disciplina</li></a>
+            <a href="{% url 'noticias' %}" target="_blank"><li>Noticias</li></a>
+        </ul>
+    </header>  
+    {% endblock header %}
 
+    {% block h1 %}
+    <h1>Home page - Faculdade Impacta</h1>
+    {% endblock h1 %}
     <br>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt excepturi cumque voluptatem dolorum perspiciatis recusandae possimus, aliquid, officiis voluptas, ipsa eveniet commodi unde vero qui molestiae placeat officia error? Quibusdam!</p>
     <footer>

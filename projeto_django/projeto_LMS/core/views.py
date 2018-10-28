@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 # Create your views here.
 
 def index(request):
@@ -11,13 +12,26 @@ def index(request):
 
 def detalhecurso(request):
     context = {
-        'title': 'Projeto LMS: CURSOS'
+        'title': 'Projeto LMS: DETALHE DOS CURSOS'
     }
     return render(request, "detalhecurso.html", context)
 
 def disciplina(request):
-    conxtet = {
+    context = {
         'title': 'Projeto LMS: DISCIPLINAS'
     }
     return render(request, "disciplina.html", context)
+
+def listacurso(request):
+    context = {
+        'title': 'Projeto LMS: LISTA DO CURSOS'
+    }
+    return render(request, "listacurso.html", context)
+
+def noticias(request):
+    context = {
+        'title': 'Projeto LMS: NOTICIAS'
+    }
+    return render(request, "noticias.html", context)
+
 
