@@ -21,13 +21,15 @@
         <a href="{% url 'homepage' %}"><img src="{% static 'Header_logo_impacta.png'%}" width="200" height="170"></a>
         <br>
         <br>
-        <ul>
+        <div class="topnav" id="myTopnav">
+        
             <a href="{% url 'homepage' %}" ><li>Home Page</li></a>
             <a href="{% url 'listadocurso' %}" ><li>Lista de Cursos</li></a>
-            <a href="{% url 'detalhedocurso' %}" ><li>Detalhe de Curso</li></a>
+            <a href="{% url 'detalhedocurso' %}" ><li>Detalhes de Curso</li></a>
             <a href="{% url 'disciplina' %}" ><li>Disciplinas</li></a>
             <a href="{% url 'noticias' %}" ><li>Noticias</li></a>
-        </ul>
+        
+        </div>
     </header>  
     {% endblock header %}
 
