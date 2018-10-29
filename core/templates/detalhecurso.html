@@ -14,20 +14,18 @@
     </head>
     <body>
         
-            {% block header %}
-                {{block.super}}
-            {% endblock header %}
-            
-            {% block h1 %}
+        {% block header %}
+            {{block.super}}
+        {% endblock header %}
+        
+        {% block h1 %}
         <h1> Detalhes do curso </h1>
-            {% endblock h1 %}
-
+        {% endblock h1 %}
+    {% block content %}
     <p>O detalhe dos cursos oferecidos...lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt excepturi cumque voluptatem dolorum perspiciatis recusandae possimus, aliquid, officiis voluptas, ipsa eveniet commodi unde vero qui molestiae placeat officia error? Quibusdam!</p>
-    
-    
-    
-    <footer>
-        <p>Criado por: Alunos Nathalia, Tadeu, Tiberio e Vinicius</p>
-      </footer>
+    {% endblock content %}
+    {% block footer %}
+        {{block.super}}
+    {% endblock footer %}
 </body>
 </html>

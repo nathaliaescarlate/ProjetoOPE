@@ -18,7 +18,7 @@
 <body>
     {% block header %}
     <header>
-        <img src="{% static 'Header_logo_impacta.png'%}" width="200" height="170"><a href= "index" target="_blank">Projeto LMS - Faculdade Impacta</a>
+        <img src="{% static 'Header_logo_impacta.png'%}" width="200" height="170">
         <br>
         <br>
         <ul>
@@ -35,9 +35,13 @@
     <h1>Home page - Faculdade Impacta</h1>
     {% endblock h1 %}
     <br>
+    {% block content %}
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt excepturi cumque voluptatem dolorum perspiciatis recusandae possimus, aliquid, officiis voluptas, ipsa eveniet commodi unde vero qui molestiae placeat officia error? Quibusdam!</p>
+    {% endblock content %}
+    {% block footer %}
     <footer>
         <p>Criado por: Alunos Nathalia, Tadeu, Tiberio e Vinicius</p>
     </footer>
+    {% endblock footer %}
 </body>
 </html>
