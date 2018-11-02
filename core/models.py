@@ -10,14 +10,17 @@ class Usuario(models.Model):
     celular = models.TextField(max_length=25)
     dt_expiracao = models.DateField(default=date(year=1900, month=1, day=1))
     login = models.TextField(max_length=30, unique=True)
-    senha = models.TextField(max_length=30)
+    senha = models.TextField(max_length=30, check=max_length=8) #TIRAR OU NÃO O CHECK??? PROF NÃO DEU EM AULA
 
 class Coordenador(models.Model):
     pass
 
 class Aluno(Usuario):
     
-    ra = models.IntegerField()
+    nome = Usuario.nome(max_length=50)
+    email = Usuario.email(max_length=30, unique=True)
+    celular = Usuario.celular(max_length=25, unique=True)
+    ra = models.IntegerField(, unique=True)
     foto = models.TextField(max_length=255)
 
 class Professor(Usuario):
@@ -25,14 +28,16 @@ class Professor(Usuario):
     pass
 
 class Disciplina(models.Model):
-
+    
     coordenador = models.ForeignKey(Coordenador, on_delete=models.PROTECT)
 
 class Curso(models.Model):
+
     pass
 
 class DisciplinaOfertada(models.Model):
 
+    
     professor = models.ForeignKey(Professor, on_delete=models.PROTECT)
 
     class Meta:
@@ -51,6 +56,7 @@ class AtividadeVinculada():
 
 class EntregaAtividade():
 
+    pass
     professor = models.ForeignKey(Professor, on_delete=models.PROTECT)
     atividade = models.ForeignKey(Atividade, on_delete=models.PROTECT)
     disciplina_ofertada = models.ForeignKey(DisciplinaOfertada, on_delete=models.PROTECT)
