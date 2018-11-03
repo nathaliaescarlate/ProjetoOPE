@@ -10,7 +10,7 @@ class Usuario(models.Model):
     celular = models.TextField(max_length=25)
     dt_expiracao = models.DateField(default=date(year=1900, month=1, day=1))
     login = models.TextField(max_length=30, unique=True)
-    senha = models.TextField(max_length=8, check=max_length=8) #TIRAR OU NÃO O CHECK??? PROF NÃO DEU EM AULA
+    senha = models.TextField(max_length=8) #TIRAR OU NÃO O CHECK??? PROF NÃO DEU EM AULA
 
 class Coordenador(models.Model):
     pass
@@ -46,18 +46,22 @@ class Disciplina(models.Model):
 
 class Curso(models.Model):
 
-    pass
-
-class DisciplinaOfertada(models.Model):
-
+    curso = models.TextField(max_length=50)
     
+class DisciplinaOfertada(models.Model):
     professor = models.ForeignKey(Professor, on_delete=models.PROTECT)
 
     class Meta:
        unique_together = ('curso', 'disciplina', 'turma', 'ano', 'semestre')
 
 class SolicitacaoMatricula(models.Model):
-    pass
+    
+    dtsolicitacao = models.datetime
+    status = status.TextField(max_length=15)
+
+    aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
+    iddisciplinaofertada = models.ForeignKey(DisciplinaOfertada, on_delete=models.PROTECT)
+    idcoordenador = models.ForeignKey(Coordenador, on_delete=models.PROTECT)
 
 class Atividade(models.Model):
 
@@ -100,3 +104,13 @@ class Mensagem(models.Model):
     dtenvio    = models.DateField(default=date(year=1900, month=1, day=1))
     dtresposta = models.DateField(default=date(year=1900, month=1, day=1))
     resposta   = models.TextField(max_length=500)
+
+class Professor(models.Model):
+
+    nome = models.TextField(max_length=50)
+    email = models.TextField(max_length=30)
+    celular = models.celular(max_length=11, unique=True)
+    apelido = models.apelido(max_length=50)
+
+    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
+
