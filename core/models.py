@@ -15,17 +15,21 @@ class Usuario(models.Model):
 class Coordenador(models.Model):
     pass
 
-class Aluno(Usuario):
+class Aluno(models.Model):
     
-    nome = Usuario.nome(max_length=50)
-    email = Usuario.email(max_length=50, unique=True)
-    celular = Usuario.celular(max_length=11, unique=True)
+    nome = models.TextField(max_length=50)
+    email = models.TextField(max_length=50, unique=True)
+    celular = models.TextField(max_length=11, unique=True)
     ra = models.TextField(max_length=7, unique=True)
     foto = models.TextField(max_length=100)
 
 class Professor(Usuario):
+    nome = models.TextField(max_length=50)
+    email = models.TextField(max_length=30)
+    celular = models.TextField(max_length=11)
+    apelido = models.TextField(max_length=50)
 
-    pass
+    idusuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
 
 class Disciplina(models.Model):
     
@@ -56,8 +60,8 @@ class DisciplinaOfertada(models.Model):
 
 class SolicitacaoMatricula(models.Model):
     
-    dtsolicitacao = models.datetime
-    status = status.TextField(max_length=15)
+    #dtsolicitacao = models.datetime
+    status = models.TextField(max_length=15)
 
     aluno = models.ForeignKey(Aluno, on_delete=models.PROTECT)
     iddisciplinaofertada = models.ForeignKey(DisciplinaOfertada, on_delete=models.PROTECT)
@@ -105,12 +109,5 @@ class Mensagem(models.Model):
     dtresposta = models.DateField(default=date(year=1900, month=1, day=1))
     resposta   = models.TextField(max_length=500)
 
-class Professor(models.Model):
 
-    nome = models.TextField(max_length=50)
-    email = models.TextField(max_length=30)
-    celular = models.celular(max_length=11, unique=True)
-    apelido = models.apelido(max_length=50)
-
-    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
 
