@@ -5,4 +5,4 @@ install:
    - pip install -q $IDJANGO
    
 script: 
-   - python manage.py
+   - python manage.py test
