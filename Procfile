@@ -1,2 +1,2 @@
-web: gunicorn projeto_LMS.wsgi --log-file
+web: gunicorn core.wsgi --log-file
 log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
