@@ -25,7 +25,9 @@ SECRET_KEY = 's=3!1&#u9#hw=omz+q$9dds8@b24)-+jtzv#a94m^g9xatyw#w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['impacta-lms-app.herokuapp.com']
+ALLOWED_HOSTS = ['impacta-lms-app.herokuapp.com',
+                'localhost:8000'
+                ]
 
 
 # Application definition
