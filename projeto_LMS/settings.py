@@ -26,7 +26,8 @@ SECRET_KEY = 's=3!1&#u9#hw=omz+q$9dds8@b24)-+jtzv#a94m^g9xatyw#w'
 DEBUG = True
 
 ALLOWED_HOSTS = ['impacta-lms-app.herokuapp.com',
-                'localhost:8000'
+                'localhost:8000',
+                'localhost'
                 ]
 
 
